@@ -36,11 +36,13 @@
 (333) 456-8768
 4446575547`;
 
-    let regExp = /\(?(\d{3})\)?[\s-]?\d{3}[\s-]?\d{4}/g;
+    function formatNum(string) {
+        let regExp = /\(?(\d{3})\)?[\s-]?(\d{3})[\s-]?(\d{4})/g;
+        return string.replace(regExp, `($1) $2 $3`)
+    }
+    console.log(formatNum(st))
 
-    st = st.replace(/[.]| /g,'');
 
-    console.log(st.replace(regExp, "($1)"));
 </script>
 </body>
 </html>
