@@ -88,7 +88,7 @@
 
 /***/ "./src/components/media.js":
 /*!*********************************!*\
-  !*** ./src/components/media.js ***!
+  !*** ./src/components/ShopProduct.js ***!
   \*********************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -115,7 +115,7 @@ Media.prototype.stop = function () {
 
 /***/ "./src/components/movie.js":
 /*!*********************************!*\
-  !*** ./src/components/movie.js ***!
+  !*** ./src/components/CDProduct.js ***!
   \*********************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -193,7 +193,7 @@ PlayList.prototype.render = function (list) {
 
 /***/ "./src/components/song.js":
 /*!********************************!*\
-  !*** ./src/components/song.js ***!
+  !*** ./src/components/BookProduct.js ***!
   \********************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
