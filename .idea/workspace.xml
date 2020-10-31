@@ -20,42 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e41b61ba-1b82-4cec-9848-501cf56701eb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/advanced_js.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/aws.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProductList/.babelrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProductList/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProductList/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProductList/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProductList/src/components/BookProduct.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProductList/src/components/CDProduct.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProductList/src/components/ShopProduct.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProductList/src/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProductList/src/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProductList/src/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProductList/src/scss/style.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProductList/webpack.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ProductList/yarn.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.babelrc" beforeDir="false" afterPath="$PROJECT_DIR$/PlayList/.babelrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/PlayList/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/PlayList/dist/bundle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/PlayList/dist/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/PlayList/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/PlayList/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/media.js" beforeDir="false" afterPath="$PROJECT_DIR$/PlayList/src/components/media.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/movie.js" beforeDir="false" afterPath="$PROJECT_DIR$/PlayList/src/components/movie.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/playlist.js" beforeDir="false" afterPath="$PROJECT_DIR$/PlayList/src/components/playlist.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/song.js" beforeDir="false" afterPath="$PROJECT_DIR$/PlayList/src/components/song.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/PlayList/src/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/PlayList/src/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/PlayList/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/PlayList/src/scss/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/PlayList/webpack.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/PlayList/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +79,7 @@
       <workItem from="1603819219109" duration="586000" />
       <workItem from="1603888298178" duration="3131000" />
       <workItem from="1604000034487" duration="5879000" />
-      <workItem from="1604061111869" duration="9710000" />
+      <workItem from="1604061111869" duration="13697000" />
     </task>
     <servers />
   </component>
@@ -167,9 +132,17 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1515" height="210" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1604061775228" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1604075512940">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1604075512940" />
     <state x="476" y="8" width="583" height="807" key="find.popup" timestamp="1604068311527">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="476" y="8" width="583" height="807" key="find.popup/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1604068311527" />
+    <state x="541" y="123" key="git4idea.branch.GitSmartOperationDialog" timestamp="1604150689084">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="541" y="123" key="git4idea.branch.GitSmartOperationDialog/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1604150689084" />
   </component>
 </project>
