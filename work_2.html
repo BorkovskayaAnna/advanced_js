@@ -58,34 +58,33 @@
         {id: 9, name: "Willy", age: "20"}
     ];
 
-    let getAgeArr = users.slice().map(elem=>elem.age).sort();
-
-    function getAgeEl(arr){
+    function getAge(arr) {
         let options = [];
 
-        for(let el of arr){
-            if(!options.includes(el)){
-                options.push(el);
-                usersSelect.innerHTML += `<option value="${el}">${el}</option>`;
+        for(let el of arr) {
+            if(!options.includes(el.age)){
+                options.push(el.age);
+                usersSelect.innerHTML += `<option value="${el.age}">${el.age}</option>`;
             }
         }
+
         return options;
     }
 
-    function showUsers(el){
-        let user = [];
+    function filterUsers() {
+        res.innerHTML = '';
+        let value = usersSelect.value;
 
-        user = users.slice().map(elem=>elem.name);
-
-        usersSelect.addEventListener('change',()=>{
-            console.log(user);
-            res.innerHTML += `<div>${el}</div>`;
-        })
-
-
+        for (let user of users) {
+            if (user.age === value) {
+                res.innerHTML += `<div>${user.name}</div>`
+            }
+        }
     }
-    getAgeEl(getAgeArr);
-    showUsers(users);
+
+    getAge(users)
+
+    usersSelect.addEventListener('change', filterUsers)
 
 </script>
 
