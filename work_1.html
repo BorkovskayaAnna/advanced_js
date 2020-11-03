@@ -49,19 +49,24 @@
         const list = document.getElementById("list"),
             els = list.getElementsByTagName("li");
 
-        function showNum(num) {
+        /*function showNum(num) {
             alert(num)
-        }
+        }*/
 
-        function showNumCallback(num) {
+        /*function showNumCallback(num) {
             return function() {
                 showNum(num);
             };
-        }
+        }*/
 
         function getNum() {
             for (var i = 0, len = els.length; i < len; i++) {
-                els[i].onclick = showNumCallback(i);
+                // els[i].onclick = showNumCallback(i);
+                els[i].onclick = (function (j){
+                    return function(){
+                        alert(j + 1);
+                    };
+                }(i))
             }
         }
 
