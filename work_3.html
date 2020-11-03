@@ -17,13 +17,27 @@
     const arr = [11, 66, 33, 44, 22, 55, 2];
 
     function filterF(arr, fn) {
-        arr.filter(fn)
+        // arr.filter(fn)
+        return  fn(arr)
+    }
+
+    function fn(arr) {
+        return function(item) {
+            return arr.includes(item)
+        }
     }
 
     // Проверка - вернуть массив с элементами значение которых больше 50
     const filteredArr = filterF(arr, function (item) {
-        if(item > 50) alert(item);
-        return item > 50
+        let filteredNum = [];
+
+        for( let el of item ) {
+            if(el > 50) {
+                filteredNum.push(el)
+            }
+        }
+        return filteredNum
+
     });
 
     console.log(filteredArr); //   [66, 55]]
