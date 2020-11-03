@@ -17,14 +17,7 @@
     const arr = [11, 66, 33, 44, 22, 55, 2];
 
     function filterF(arr, fn) {
-        // arr.filter(fn)
         return  fn(arr)
-    }
-
-    function fn(arr) {
-        return function(item) {
-            return arr.includes(item)
-        }
     }
 
     // Проверка - вернуть массив с элементами значение которых больше 50
@@ -41,10 +34,6 @@
     });
 
     console.log(filteredArr); //   [66, 55]]
-
-
-    // не понятно почему if(item > 50) alert(item); выводит правильно
-    // а уже в console.log(filteredArr) выводит undefined
 
 </script>
 </body>
