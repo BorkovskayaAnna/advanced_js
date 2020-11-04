@@ -19,7 +19,12 @@
         return `${this.firstName} adds ${a + b + c}`;
     }
     function bind(fn, args) {
-        //your code here
+        let outerArgs = [].slice.call(arguments, 2);
+        return function() {
+            const innerArgs = [].slice.apply(arguments);
+            const allArgs = outerArgs.concat(innerArgs);
+            return console.log(fn.apply(args, allArgs));
+        };
     }
     // usage
     bind(add, user)(1, 2, 3); // Bill adds 6
