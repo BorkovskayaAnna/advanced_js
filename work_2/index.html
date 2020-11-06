@@ -1,24 +1,103 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>List of friends</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <style>
-        .post-author_info {
-            display: none;
-        }
-        .post-author.open ~ .post-author_info {
-            display: block;
-        }
-    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab</title>
+    <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous"
+    />
 </head>
 <body>
-<div class="container">
-   <h1>Posts List</h1>
-    <div id="blog-list"></div>
-</div>
-<script src="script.js"></script>
+<div id="root"></div>
 
+<script
+        crossorigin
+        src="https://unpkg.com/react@16.8.6/umd/react.development.js"
+></script>
+<script
+        crossorigin
+        src="https://unpkg.com/react-dom@16.8.6/umd/react-dom.development.js"
+></script>
+<script crossorigin src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+<script crossorigin src="https://unpkg.com/prop-types@15.7.2/prop-types.js"></script>
+
+
+
+<script type="text/babel">
+
+    const root = document.getElementById("root");
+    const url = 'https://jsonplaceholder.typicode.com/users'
+
+    function User(props) {
+        return(
+            <React.Fragment>
+                <p><strong>Name</strong>: {props.name}</p>
+                <p><strong>Username</strong>: {props.username}</p>
+                <p><strong>email</strong>: {props.email}</p>
+            </React.Fragment>
+        )
+    }
+
+    User.propTypes = {
+        name: PropTypes.string.isRequired,
+        username: PropTypes.string.isRequired,
+        email: PropTypes.string,
+    }
+
+    User.defaultProps = {
+        name: 'default name',
+        username: 'default username'
+    }
+
+    function App() {
+        const [error, setError] = React.useState(null);
+        const [isLoaded, setIsLoaded] = React.useState(false);
+        const [users, setUsers] = React.useState([]);
+        const [filter, setFilter] = React.useState('')
+
+        const getFilter = e => setFilter(e.target.value);
+
+        React.useEffect(() => {
+            fetch(url)
+                .then(res => res.json())
+                .then(
+                    (result) => {
+                        setIsLoaded(true);
+                        setUsers(result);
+                    },
+                    (error) => {
+                        setIsLoaded(true);
+                        setError(error);
+                    }
+                )
+        }, [])
+
+        if (error) {
+            return <div>Ошибка: {error.message}</div>;
+        } else if (!isLoaded) {
+            return <div>Загрузка...</div>;
+        } else {
+            return (
+                <div className="container">
+                    <div className="search-box">
+                        <input type="search" onChange={getFilter} value={filter} />
+                    </div>
+                    {users.map(item => item.name.toLowerCase().includes(filter)  ? (
+                            <React.Fragment>
+                                <User name={item.name} username={item.username} email={item.email}/>
+                                <hr/>
+                            </React.Fragment>
+                        ) : ''
+                    )}
+                </div>
+            );
+        }
+    }
+    ReactDOM.render(<App />, root)
+</script>
 </body>
 </html>

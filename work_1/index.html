@@ -1,33 +1,109 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>List of friends</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <style>
-        table {
-            border-collapse: collapse;
-        }
-        table, td, th {
-            border: 1px solid #ccc;
-        }
-        td, th {
-            padding: 5px
-        }
-    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab</title>
+    <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous"
+    />
 </head>
 <body>
-<div class="container">
-   <table id="posts-table">
-       <thead>
-           <th>Id</th>
-           <th>Title</th>
-           <th>Description</th>
-       </thead>
-       <tbody></tbody>
-   </table>
-</div>
-<script src="script.js"></script>
+<div id="root"></div>
 
+<script
+        crossorigin
+        src="https://unpkg.com/react@16.8.6/umd/react.development.js"
+></script>
+<script
+        crossorigin
+        src="https://unpkg.com/react-dom@16.8.6/umd/react-dom.development.js"
+></script>
+<script crossorigin src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+<script crossorigin src="https://unpkg.com/prop-types@15.7.2/prop-types.js"></script>
+
+
+
+<script type="text/babel">
+    const root = document.getElementById("root");
+    const url = 'https://jsonplaceholder.typicode.com/users'
+
+    class User extends React.Component {
+        render() {
+            return(
+                <React.Fragment>
+                    <p><strong>Name</strong>: {this.props.name}</p>
+                    <p><strong>Username</strong>: {this.props.username}</p>
+                    <p><strong>email</strong>: {this.props.email}</p>
+                </React.Fragment>
+            )
+        }
+    }
+
+    class App extends React.Component {
+        constructor(props) {
+            super(props)
+
+            this.state = {
+                error: null,
+                isLoaded: false,
+                users: [],
+                filter: ''
+            }
+        }
+
+        getFilter = e => this.setState({ filter: e.target.value });
+
+        componentDidMount() {
+            fetch(url)
+                .then(res => res.json())
+                .then(
+                    (data) => {
+                        this.setState({
+                            isLoaded: true,
+                            users: data
+                        });
+                    },
+                    (error) => {
+                        this.setState({
+                            isLoaded: true,
+                            error
+                        });
+                    }
+                )
+        }
+
+        render() {
+
+            const { error, isLoaded, users, filter } = this.state;
+            if (error) {
+                return <div>Ошибка: {error.message}</div>;
+            } else if (!isLoaded) {
+                return <div>... Loading ...</div>;
+            } else {
+                console.log(filter);
+                return (
+                    <div className="container">
+                        <div className="search-box">
+                            <input type="search" onChange={this.getFilter} value={filter} />
+                        </div>
+                        {users.map(item => item.name.toLowerCase().includes(filter)  ? (
+                                <React.Fragment>
+                                    <User name={item.name} username={item.username} email={item.email} />
+                                    <hr/>
+                                </React.Fragment>
+                            ) : ''
+                        )}
+                    </div>
+                );
+            }
+        }
+    }
+
+    ReactDOM.render(<App />, root)
+</script>
 </body>
 </html>
